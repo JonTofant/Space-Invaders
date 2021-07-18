@@ -52,7 +52,7 @@ playerX = (screen.get_width() / 2) -64
 playerY = 480
 playerX_change = 0
 moveSpeed =0.5 
-player_rectange= playerImg.get_rect()
+player_rectangle= playerImg.get_rect()
 
 #boss
 bossImg = pygame.image.load(resource_path('boss.png'))
@@ -179,7 +179,7 @@ while running:
                 playerX_change = 0
 
     playerX += playerX_change
-    player_rectange.center = playerX, playerY
+    player_rectangle.center = playerX, playerY
 
     ##########
     # player #
@@ -199,7 +199,7 @@ while running:
         ############
         # gameOver #
         ############
-        if alien_rectangle[i].colliderect(player_rectange):
+        if alien_rectangle[i].colliderect(player_rectangle):
             for j in range(numOfEnemies):
                 alienY[j]=2000
             playerY = 2000
@@ -330,7 +330,7 @@ while running:
             bulletMoveSpeed ="fire"
             victory()
         
-        if bossBullet_rectangle.colliderect(player_rectange):
+        if bossBullet_rectangle.colliderect(player_rectangle):
             bossY=3000
             playerY = 4000
             bulletY = 5000
